@@ -1,7 +1,8 @@
 {
   "name": "project-docs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "MCP para generar documentación completa de proyectos",
+  "usage": "Para usar este MCP correctamente, indique a la IA: 'Ejecuta el comando project-docs-mcp-execute para generar documentación del proyecto' o 'Genera documentación completa para este proyecto usando el comando project-docs-mcp-all'",
   "instructions": "Analiza este proyecto y genera documentación completa siguiendo los pasos especificados en este protocolo. Usa los pasos para entender y documentar la estructura, componentes, funciones, variables, patrones de diseño y flujos del proyecto actual. Aplica los patrones de gitignore para ignorar archivos irrelevantes. La documentación final se generará en el archivo DOCS-MCP.md.",
   "template": {
     "path": "templates/template-generic.md",

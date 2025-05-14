@@ -1,6 +1,6 @@
 {
   "name": "project-docs-mcp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "MCP (Model Context Protocol) para generar documentación detallada de proyectos con Cursor",
   "main": "mcp-docs.js",
   "bin": {
@@ -34,6 +34,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
     "minimatch": "^5.1.0"
   },
   "engines": {
@@ -43,4 +44,4 @@
     "type": "git",
     "url": "https://github.com/yourusername/project-docs-mcp"
   }
-} 
+}
