@@ -1,0 +1,244 @@
+{
+  "name": "project-docs",
+  "version": "1.1.0",
+  "description": "MCP para generar documentación completa de proyectos",
+  "language": {
+    "default": "es",
+    "supported": ["es", "en", "fr", "pt", "de"]
+  },
+  "ignore": {
+    "directories": [
+      "node_modules",
+      ".git",
+      ".github",
+      "dist",
+      "build",
+      "coverage",
+      ".idea",
+      ".vscode",
+      ".next",
+      ".nuxt",
+      "out",
+      ".DS_Store",
+      ".cache",
+      ".tmp",
+      "tmp",
+      "log",
+      "logs"
+    ],
+    "files": [
+      ".env",
+      ".env.local",
+      ".env.development",
+      ".env.test",
+      ".env.production",
+      "*.log",
+      "*.lock",
+      "package-lock.json",
+      "yarn.lock",
+      "npm-debug.log*",
+      "yarn-debug.log*",
+      "yarn-error.log*",
+      "*.min.js",
+      "*.min.css",
+      "*.map"
+    ],
+    "patterns": [
+      "**/.env*",
+      "**/*.log",
+      "**/node_modules/**",
+      "**/coverage/**",
+      "**/dist/**",
+      "**/build/**"
+    ]
+  },
+  "steps": [
+    {
+      "name": "analizar_estructura",
+      "description": "Analizar la estructura general del proyecto",
+      "prompts": [
+        "Examina los archivos y directorios principales",
+        "Identifica el tipo de proyecto (Node.js, Python, etc.)",
+        "Detecta patrones de arquitectura comunes",
+        "Identifica la organización del código y convenciones utilizadas",
+        "Ignora archivos y directorios especificados en la sección 'ignore'"
+      ]
+    },
+    {
+      "name": "identificar_componentes",
+      "description": "Identificar los componentes principales del proyecto",
+      "prompts": [
+        "Localiza los archivos de entrada/punto principal",
+        "Identifica módulos o componentes clave",
+        "Determina las dependencias externas",
+        "Identifica la relación entre componentes y su acoplamiento"
+      ]
+    },
+    {
+      "name": "analizar_flujo",
+      "description": "Analizar el flujo de ejecución/datos",
+      "prompts": [
+        "Determina cómo se inicia el proyecto",
+        "Identifica los flujos de datos principales",
+        "Detecta patrones de comunicación entre componentes",
+        "Documenta el ciclo de vida completo de la aplicación"
+      ]
+    },
+    {
+      "name": "documentar_funciones",
+      "description": "Documentar funciones y métodos del código",
+      "prompts": [
+        "Identifica las funciones y métodos más importantes",
+        "Documenta sus parámetros, valores de retorno y efectos secundarios",
+        "Clasifica las funciones por módulos o componentes",
+        "Analiza la complejidad y patrones utilizados en cada función"
+      ]
+    },
+    {
+      "name": "documentar_variables",
+      "description": "Documentar variables y estructuras de datos",
+      "prompts": [
+        "Identifica las variables y constantes globales importantes",
+        "Documenta las estructuras de datos principales",
+        "Analiza los tipos de datos y su uso en el proyecto",
+        "Identifica patrones de estado y gestión de datos"
+      ]
+    },
+    {
+      "name": "documentar_patrones",
+      "description": "Documentar patrones de diseño y arquitectura",
+      "prompts": [
+        "Identifica patrones de diseño utilizados (Singleton, Factory, etc.)",
+        "Analiza patrones arquitectónicos (MVC, MVVM, etc.)",
+        "Documenta patrones de comunicación (Observer, Pub/Sub, etc.)",
+        "Identifica buenas prácticas y anti-patrones en el código"
+      ]
+    },
+    {
+      "name": "generar_diagramas",
+      "description": "Generar diagramas explicativos",
+      "prompts": [
+        "Crea un diagrama de la estructura del proyecto",
+        "Diseña un diagrama de arquitectura",
+        "Si aplica, crea un diagrama de flujo de datos",
+        "Genera un diagrama de clases/componentes",
+        "Crea diagramas de secuencia para procesos importantes"
+      ]
+    },
+    {
+      "name": "documentar_instalacion",
+      "description": "Documentar proceso de instalación",
+      "prompts": [
+        "Determina los requisitos previos",
+        "Explica el proceso de instalación paso a paso",
+        "Incluye solución a problemas comunes",
+        "Documenta configuraciones específicas para diferentes entornos"
+      ]
+    },
+    {
+      "name": "documentar_uso",
+      "description": "Documentar el uso del proyecto",
+      "prompts": [
+        "Explica cómo iniciar/usar el proyecto",
+        "Describe los casos de uso principales",
+        "Documenta la API o interfaz pública",
+        "Provee ejemplos detallados de uso con código"
+      ]
+    },
+    {
+      "name": "documentar_pruebas",
+      "description": "Documentar pruebas y calidad",
+      "prompts": [
+        "Identifica la estrategia de pruebas utilizada",
+        "Documenta tipos de pruebas existentes (unitarias, integración, etc.)",
+        "Analiza la cobertura de pruebas",
+        "Describe cómo ejecutar y mantener las pruebas"
+      ]
+    },
+    {
+      "name": "compilar_readme",
+      "description": "Compilar toda la información en un README completo",
+      "prompts": [
+        "Organiza toda la información recopilada",
+        "Crea un README.md estructurado y completo",
+        "Asegúrate de incluir todos los elementos esenciales",
+        "Genera documentación técnica detallada para desarrolladores"
+      ]
+    }
+  ],
+  "output_format": {
+    "type": "markdown",
+    "sections": [
+      {
+        "name": "titulo",
+        "required": true,
+        "description": "Título del proyecto"
+      },
+      {
+        "name": "descripcion",
+        "required": true,
+        "description": "Descripción detallada del proyecto"
+      },
+      {
+        "name": "arquitectura",
+        "required": true,
+        "description": "Estructura arquitectónica y patrones utilizados"
+      },
+      {
+        "name": "componentes",
+        "required": true,
+        "description": "Componentes principales y su función"
+      },
+      {
+        "name": "codigo_detallado",
+        "required": true,
+        "description": "Documentación detallada de funciones, variables y patrones"
+      },
+      {
+        "name": "flujos",
+        "required": true,
+        "description": "Flujos de ejecución y datos principales"
+      },
+      {
+        "name": "instalacion",
+        "required": true,
+        "description": "Instrucciones de instalación"
+      },
+      {
+        "name": "uso",
+        "required": true,
+        "description": "Guía de uso"
+      },
+      {
+        "name": "estructura",
+        "required": true,
+        "description": "Estructura del proyecto"
+      },
+      {
+        "name": "diagramas",
+        "required": true,
+        "description": "Diagramas explicativos"
+      },
+      {
+        "name": "api",
+        "required": false,
+        "description": "Documentación de API (si aplica)"
+      },
+      {
+        "name": "pruebas",
+        "required": true,
+        "description": "Información sobre pruebas y calidad"
+      },
+      {
+        "name": "contribucion",
+        "required": false,
+        "description": "Guía de contribución"
+      },
+      {
+        "name": "licencia",
+        "required": true,
+        "description": "Información de licencia"
+      }
+    ]
+  }
+} 

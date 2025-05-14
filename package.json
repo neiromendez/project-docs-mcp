@@ -1,0 +1,38 @@
+{
+  "name": "project-docs-mcp",
+  "version": "1.1.0",
+  "description": "MCP (Model Context Protocol) para generar documentación detallada de proyectos con Cursor",
+  "main": "mcp-docs.js",
+  "bin": {
+    "project-docs-mcp": "./mcp-docs.js",
+    "project-docs-mcp-server": "./mcp-server.js",
+    "project-docs-mcp-serve": "./serve-mcp.js"
+  },
+  "scripts": {
+    "start": "node mcp-docs.js",
+    "server": "node mcp-server.js",
+    "serve": "node serve-mcp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "documentation",
+    "generator",
+    "documentation-generator",
+    "mcp",
+    "model-context-protocol",
+    "cursor",
+    "ai-documentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "minimatch": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/project-docs-mcp"
+  }
+} 
