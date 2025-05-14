@@ -36,6 +36,29 @@ Para configurar Cursor, edita el archivo `~/.cursor/mcp.json` y añade:
 }
 ```
 
+### Configuración con Generación Automática de Documentación
+
+Para configurar el MCP con generación automática de documentación:
+
+```json
+"mcpServers": {
+  "project-docs": {
+    "command": "project-docs-mcp-serve-enhanced",
+    "runtime": "node"
+  },
+  "project-docs-generate": {
+    "command": "project-docs-mcp-serve-enhanced --generate",
+    "runtime": "node" 
+  },
+  "project-docs-all": {
+    "command": "project-docs-mcp-all",
+    "runtime": "node"
+  }
+}
+```
+
+El comando `project-docs-all` ejecuta todo el proceso en un solo paso y guarda la documentación en el archivo `DOCS-MCP.md` automáticamente.
+
 ### Configuración con Idioma Específico
 
 Puedes configurar el MCP para que genere documentación en un idioma específico:
@@ -139,7 +162,9 @@ Con el MCP project-docs, crea documentación exhaustiva de todas las funciones y
 Utiliza el MCP project-docs para generar documentación completa de este proyecto en español. Sigue todos los pasos del protocolo y asegúrate de que la documentación sea clara y comprensible, especialmente en las secciones técnicas de funciones y variables.
 ```
 
-## Pasos del MCP
+## Cómo Funciona el MCP
+
+### Pasos del MCP
 
 El MCP guía al modelo a través de los siguientes pasos:
 
@@ -154,6 +179,14 @@ El MCP guía al modelo a través de los siguientes pasos:
 9. **Documentar uso** - Explicar cómo usar el proyecto
 10. **Documentar pruebas** - Analizar estrategias de pruebas y calidad
 11. **Compilar README** - Organizar toda la información en un documento coherente
+
+### Sistema de plantilla
+
+El MCP utiliza una plantilla única para generar documentación para cualquier proyecto:
+
+- **template-generic.md**: Plantilla universal con marcadores de posición que se adapta a cualquier proyecto, incluido el propio MCP
+
+La plantilla se encuentra en la carpeta `templates/` y es utilizada automáticamente por el script `project-docs-mcp-all.js` para generar documentación detallada.
 
 ## Archivos y Directorios Ignorados
 
@@ -206,11 +239,28 @@ El MCP especifica que la documentación debe incluir las siguientes secciones:
 
 ## Para Desarrolladores de MCP
 
-Si deseas modificar este MCP, simplemente edita el archivo `project-docs-mcp.json` para:
+Si deseas modificar este MCP, puedes editar varios archivos:
+
+### Modificar el protocolo
+
+Edita el archivo `project-docs-mcp.json` para:
 - Añadir nuevos pasos al proceso
 - Modificar los prompts de cada paso
 - Cambiar el formato de salida
 - Añadir nuevas secciones obligatorias u opcionales
+
+### Modificar la plantilla
+
+Edita el archivo `templates/template-generic.md` para cambiar el formato y estructura de la documentación generada para todos los proyectos.
+
+La plantilla contiene marcadores de posición con el formato `{{NOMBRE_MARCADOR}}` que son reemplazados automáticamente con la información analizada del proyecto. Puedes añadir nuevos marcadores o modificar la estructura según tus necesidades.
+
+### Modificar el script de ejecución
+
+Edita el archivo `project-docs-mcp-all.js` si necesitas:
+- Cambiar la lógica de selección de plantillas
+- Modificar el procesamiento de los marcadores de posición
+- Añadir nuevas funcionalidades al análisis del proyecto
 
 ## Licencia
 

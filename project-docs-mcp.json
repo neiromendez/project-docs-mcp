@@ -1,7 +1,34 @@
 {
   "name": "project-docs",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "MCP para generar documentación completa de proyectos",
+  "instructions": "Analiza este proyecto y genera documentación completa siguiendo los pasos especificados en este protocolo. Usa los pasos para entender y documentar la estructura, componentes, funciones, variables, patrones de diseño y flujos del proyecto actual. Aplica los patrones de gitignore para ignorar archivos irrelevantes. La documentación final se generará en el archivo DOCS-MCP.md.",
+  "template": {
+    "path": "templates/template-generic.md",
+    "placeholders": [
+      "NOMBRE_PROYECTO",
+      "DESCRIPCION_PROYECTO",
+      "ARQUITECTURA_PROYECTO",
+      "COMPONENTES_PRINCIPALES",
+      "FUNCIONES_IMPORTANTES",
+      "VARIABLES_IMPORTANTES",
+      "PATRONES_DISENO",
+      "FLUJOS_PRINCIPALES",
+      "REQUISITOS_PREVIOS",
+      "PASOS_INSTALACION",
+      "INSTRUCCIONES_USO",
+      "EJEMPLOS_USO",
+      "ESTRUCTURA_DIRECTORIOS",
+      "DIAGRAMA_ARQUITECTURA",
+      "DIAGRAMA_FLUJO",
+      "INFORMACION_PRUEBAS",
+      "ESTRATEGIA_PRUEBAS",
+      "DOCUMENTACION_API",
+      "INSTRUCCIONES_CONTRIBUCION",
+      "LICENCIA_PROYECTO"
+    ]
+  },
+  "output_file": "DOCS-MCP.md",
   "language": {
     "default": "es",
     "supported": ["es", "en", "fr", "pt", "de"]
@@ -157,12 +184,13 @@
     },
     {
       "name": "compilar_readme",
-      "description": "Compilar toda la información en un README completo",
+      "description": "Compilar toda la información en un documento completo",
       "prompts": [
         "Organiza toda la información recopilada",
-        "Crea un README.md estructurado y completo",
+        "Crea la documentación estructurada y completa",
         "Asegúrate de incluir todos los elementos esenciales",
-        "Genera documentación técnica detallada para desarrolladores"
+        "Genera documentación técnica detallada para desarrolladores",
+        "Guarda el resultado en el archivo DOCS-MCP.md"
       ]
     }
   ],
@@ -172,72 +200,86 @@
       {
         "name": "titulo",
         "required": true,
-        "description": "Título del proyecto"
+        "description": "Título del proyecto",
+        "placeholder": "NOMBRE_PROYECTO"
       },
       {
         "name": "descripcion",
         "required": true,
-        "description": "Descripción detallada del proyecto"
+        "description": "Descripción detallada del proyecto",
+        "placeholder": "DESCRIPCION_PROYECTO"
       },
       {
         "name": "arquitectura",
         "required": true,
-        "description": "Estructura arquitectónica y patrones utilizados"
+        "description": "Estructura arquitectónica y patrones utilizados",
+        "placeholder": "ARQUITECTURA_PROYECTO"
       },
       {
         "name": "componentes",
         "required": true,
-        "description": "Componentes principales y su función"
+        "description": "Componentes principales y su función",
+        "placeholder": "COMPONENTES_PRINCIPALES"
       },
       {
         "name": "codigo_detallado",
         "required": true,
-        "description": "Documentación detallada de funciones, variables y patrones"
+        "description": "Documentación detallada de funciones, variables y patrones",
+        "placeholders": ["FUNCIONES_IMPORTANTES", "VARIABLES_IMPORTANTES", "PATRONES_DISENO"]
       },
       {
         "name": "flujos",
         "required": true,
-        "description": "Flujos de ejecución y datos principales"
+        "description": "Flujos de ejecución y datos principales",
+        "placeholder": "FLUJOS_PRINCIPALES"
       },
       {
         "name": "instalacion",
         "required": true,
-        "description": "Instrucciones de instalación"
+        "description": "Instrucciones de instalación",
+        "placeholders": ["REQUISITOS_PREVIOS", "PASOS_INSTALACION"]
       },
       {
         "name": "uso",
         "required": true,
-        "description": "Guía de uso"
+        "description": "Guía de uso",
+        "placeholders": ["INSTRUCCIONES_USO", "EJEMPLOS_USO"]
       },
       {
         "name": "estructura",
         "required": true,
-        "description": "Estructura del proyecto"
+        "description": "Estructura del proyecto",
+        "placeholder": "ESTRUCTURA_DIRECTORIOS"
       },
       {
         "name": "diagramas",
         "required": true,
-        "description": "Diagramas explicativos"
+        "description": "Diagramas explicativos",
+        "placeholders": ["DIAGRAMA_ARQUITECTURA", "DIAGRAMA_FLUJO"]
       },
       {
         "name": "api",
         "required": false,
-        "description": "Documentación de API (si aplica)"
+        "description": "Documentación de API (si aplica)",
+        "placeholder": "DOCUMENTACION_API"
       },
       {
         "name": "pruebas",
         "required": true,
-        "description": "Información sobre pruebas y calidad"
+        "description": "Información sobre pruebas y calidad",
+        "placeholder": "INFORMACION_PRUEBAS"
       },
       {
         "name": "contribucion",
         "required": false,
-        "description": "Guía de contribución"
+        "description": "Guía de contribución",
+        "placeholder": "INSTRUCCIONES_CONTRIBUCION"
       },
       {
         "name": "licencia",
         "required": true,
-        "description": "Información de licencia"
+        "description": "Información de licencia",
+        "placeholder": "LICENCIA_PROYECTO"
       }
     ]
   }
