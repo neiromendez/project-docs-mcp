@@ -1,6 +1,6 @@
 {
   "name": "project-docs-mcp",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "MCP (Model Context Protocol) para generar documentación detallada de proyectos con Cursor",
   "main": "mcp-docs.js",
   "bin": {
